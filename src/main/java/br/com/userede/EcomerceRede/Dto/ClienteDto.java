@@ -1,11 +1,11 @@
 package br.com.userede.EcomerceRede.Dto;
 
-public class Cliente {
+public class ClienteDto {
     private String nome;
     private String cpf;
     private String email;
 
-    public Cliente() {
+    public ClienteDto() {
     }
 
     public String getNome() {
