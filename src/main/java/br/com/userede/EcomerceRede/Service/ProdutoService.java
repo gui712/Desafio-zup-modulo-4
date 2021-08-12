@@ -11,10 +11,11 @@ public class ProdutoService {
     private List<ProdutoDto> produtos = new ArrayList<>();
 
     public void adicionarProtudoNaLista(ProdutoDto produtoDto){
+        verficarProdutoDuplicado(produtoDto.getNome());
         produtos.add(produtoDto);
     }
 
-    public void verficarProdutoDuplicado (String nome, double preco, int quantidade){
+    public void verficarProdutoDuplicado (String nome){
         for(ProdutoDto produto:produtos){
             if(produto.getNome().equals(nome)){
                 throw new RuntimeException ("Produto já cadastrado, por favor cadastre um novo produto");

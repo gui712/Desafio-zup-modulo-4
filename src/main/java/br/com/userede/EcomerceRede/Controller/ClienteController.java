@@ -20,5 +20,9 @@ public class ClienteController {
     public List<ClienteDto> mostrarClientes(){
         return clienteService.mostrarCliente();
     }
+    @GetMapping("/buscacpf")
+    public ClienteDto buscaClientePorCpf(@RequestParam String cpf){
+        return clienteService.pesquisarClienteCpf(cpf);
+    }
 
 }

@@ -28,4 +28,13 @@ public class ClienteService {
 
     }
 
+    public ClienteDto pesquisarClienteCpf(String cpf){
+        for(ClienteDto cliente:clientes){
+            if(cliente.getCpf().equals(cpf)){
+                return cliente;
+            }
+        }
+        throw new RuntimeException("Cliente não encontrado");
+    }
+
 }
