@@ -29,14 +29,17 @@ public class CompraService {
         return compraDto;
     }
 
-    /*public CompraDto dadosProduto(CompraDto compraDto){
+    public CompraDto dadosProduto(CompraDto compraDto){
+        List<ProdutoDto>produtos = new ArrayList<>();
         ProdutoDto produtoCarregado;
-        produtoCarregado = produtoService.pesquisarProduto(compraDto.getProdutosDocliente());
-        compraDto.setProdutosDocliente(produtoCarregado);
+        for(ProdutoDto produto: compraDto.getProdutosDocliente()){
+            produtoCarregado = produtoService.pesquisarProduto(produto.getNome());
+            produtos.add(produtoCarregado);
+        }
+        compraDto.setProdutosDocliente(produtos);
         return compraDto;
-
     }
-*/
+
     public List<CompraDto> mostrarCompra(){
         return compras;
     }

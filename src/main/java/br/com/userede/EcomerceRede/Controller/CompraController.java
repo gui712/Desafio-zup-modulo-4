@@ -18,6 +18,7 @@ public class CompraController {
     @PostMapping
     public void cadastrarCompra(@RequestBody CompraDto compraDto)throws Exception{
         compraService.dadosCompra(compraDto);
+        compraService.dadosProduto(compraDto);
         compraService.cadastrarCompraClientes(compraDto);
 
     }
