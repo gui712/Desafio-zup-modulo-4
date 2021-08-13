@@ -9,9 +9,9 @@ import java.util.List;
 @Service
 public class ClienteService {
     private List<ClienteDto> clientes = new ArrayList<>();
-    public void adicionarClienteNaLista(ClienteDto clienteDto){
-        verificarClienteDuplicado(clienteDto.getEmail(),clienteDto.getCpf());
-        clientes.add(clienteDto);
+    public void adicionarClienteNaLista(ClienteDto cliente){
+        verificarClienteDuplicado(cliente.getEmail(),cliente.getCpf());
+        clientes.add(cliente);
     }
 
     public void verificarClienteDuplicado(String email, String cpf){

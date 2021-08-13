@@ -16,13 +16,16 @@ public class CompraController {
     private CompraService compraService;
 
     @PostMapping
-    public ClienteDto compra(@RequestBody String cpf, ProdutoDto produtoDto)throws RuntimeException{
-        return compraService.novaCompra(cpf, produtoDto);
+    public void cadastrarCompra(@RequestBody CompraDto compraDto)throws Exception{
+        compraService.dadosCompra(compraDto);
+        compraService.cadastrarCompraClientes(compraDto);
+
     }
 
     @GetMapping
-    public List<CompraDto> buscarCompra(){
-        return compraService.mostrarCompras() ;
+    public List<CompraDto> mostrarCompras(){
+        return compraService.mostrarCompra();
     }
+
 
 }

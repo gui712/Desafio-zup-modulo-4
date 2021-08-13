@@ -1,5 +1,6 @@
 package br.com.userede.EcomerceRede.Service;
 
+import br.com.userede.EcomerceRede.Dto.ClienteDto;
 import br.com.userede.EcomerceRede.Dto.ProdutoDto;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,14 @@ public class ProdutoService {
 
     public List<ProdutoDto> mostrarProdutos() {
         return produtos;
+    }
+
+    public ProdutoDto pesquisarProduto(String nome){
+        for(ProdutoDto produto: produtos){
+            if(produto.getNome().equals(nome)){
+                return produto;
+            }
+        }
+        throw new RuntimeException("Produto Não encontrado");
     }
 }

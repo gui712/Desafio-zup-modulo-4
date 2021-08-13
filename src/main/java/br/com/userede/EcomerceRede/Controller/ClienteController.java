@@ -13,8 +13,8 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
     @PostMapping
-    public void cadastrarCliente(@RequestBody ClienteDto clienteDto){
-        clienteService.adicionarClienteNaLista(clienteDto);
+    public void cadastrarCliente(@RequestBody ClienteDto cliente){
+        clienteService.adicionarClienteNaLista(cliente);
     }
     @GetMapping
     public List<ClienteDto> mostrarClientes(){

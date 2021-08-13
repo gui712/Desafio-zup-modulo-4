@@ -1,28 +1,28 @@
 package br.com.userede.EcomerceRede.Dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompraDto {
-    private ClienteDto clienteDto;
-    private List<ProdutoDto> produtosComprados;
+    private ClienteDto cliente ;
+    private List<ProdutoDto> produtosDocliente = new ArrayList<>();
 
-
-    public CompraDto (){}
-
-    public ClienteDto getClienteDto() {
-        return clienteDto;
+    public CompraDto() {
     }
 
-    public void setClienteDto(ClienteDto clienteDto) {
-        this.clienteDto = clienteDto;
+    public ClienteDto getCliente() {
+        return cliente;
     }
 
-    public List<ProdutoDto> getProdutosComprados() {
-        return produtosComprados;
+    public void setCliente(ClienteDto cliente) {
+        this.cliente = cliente;
     }
 
-    public void setProdutosComprados(List<ProdutoDto> produtosComprados) {
-        this.produtosComprados = produtosComprados;
+    public List<ProdutoDto> getProdutosDocliente() {
+        return produtosDocliente;
     }
 
+    public void setProdutosDocliente(List<ProdutoDto> produtosDocliente) {
+        this.produtosDocliente = produtosDocliente;
+    }
 }
